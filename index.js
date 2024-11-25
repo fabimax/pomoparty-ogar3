@@ -6,9 +6,16 @@ var GameServer = require('./GameServer');
 var showConsole = true;
 
 setInterval(() => {
-interval1[4] = [25, 0, 30, 0]; // from :25m:0s to :30m:0s
-interval2[4] = [55, 0, 0, 0]; // from 
-  gameServer.run = !gameServer.run
+let now = new Date();
+console.log(now);
+
+  if ((now.getMinutes()>=25 && now.getMinutes()<=29) || ((now.getMinutes()>=55 && now.getMinutes()<=59))){
+    gameServer.run=true;
+  }else{
+    gameServer.run=false;
+  }
+  
+  
 }
 , 1000)
 
